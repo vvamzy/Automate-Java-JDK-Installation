@@ -121,7 +121,7 @@ print_colour "green" "**********************************************************
 
 update-alternatives --install /usr/bin/java java /opt/$java_dir/bin/java 100 
 
-yes 3 | update-alternatives --config java
+yes 1 | update-alternatives --config java
 echo ""
 sleep 2
 
@@ -134,7 +134,7 @@ print_colour "green" "**********************************************************
 sleep 3
 
 update-alternatives --install /usr/bin/javac javac /opt/$java_dir/bin/javac 100  
-yes 3 | update-alternatives --config javac
+yes 1 | update-alternatives --config javac
 sleep 2
 echo ""
 echo ""
@@ -147,7 +147,7 @@ print_colour "green""***********************************************************
 sleep 3
 update-alternatives --install /usr/bin/jar jar /opt/$java_dir/bin/jar 100  
 sleep 1
-yes 3 | update-alternatives --config jar
+yes 1 | update-alternatives --config jar
 sleep 1
 echo ""
 print_colour "green" "**************************************************************************"
