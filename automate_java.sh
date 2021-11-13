@@ -127,11 +127,10 @@ print_colour "green" "**********************************************************
 update-alternatives --install /usr/bin/java java /opt/$java_dir/bin/java 100 
 
 yes 1 | update-alternatives --config java
-<<<<<<< HEAD
-=======
+
 echo ""
->>>>>>> ec20c3f38969586eb6df81e5f63c11c2d92e9bcb
 sleep 2
+
 echo ""
 echo ""
 print_colour "green" "*************************************************************************"
