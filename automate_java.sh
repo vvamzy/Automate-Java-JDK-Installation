@@ -82,6 +82,7 @@ if [ -e /opt/*.tar.gz ]; then
 	print_colour "green" "Tar Extraction Complete!"
 	print_colour "yellow" "Cleaning up directory"
 	rm -rf /opt/*.tar.gz
+	echo ""
 	sleep 3
 else
 	print_colour "red" "File Not Found!"
@@ -101,10 +102,12 @@ if [ -d /opt/jdk1* ]; then
 else
 	print_colour "red" "No Folder With Name"
 	sleep 2
+	echo ""
 	exit
 fi
 
 print_colour "green" "**************************************************************************"
+echo ""
 sleep 4
 
 print_colour "green" "Starting Configuration of Java"
@@ -115,16 +118,18 @@ java_dir=java
 
 print_colour "green" "*************************************************************************"
 
+echo ""
+
 print_colour "green" "Updating Java update-alternatives"
 
 print_colour "green" "*************************************************************************"
 
 update-alternatives --install /usr/bin/java java /opt/$java_dir/bin/java 100 
 
-yes 3 | update-alternatives --config java
-echo ""
+yes 1 | update-alternatives --config java
 sleep 2
-
+echo ""
+echo ""
 print_colour "green" "*************************************************************************"
 
 print_colour "green" "Updating Javac"
@@ -134,21 +139,22 @@ print_colour "green" "**********************************************************
 sleep 3
 
 update-alternatives --install /usr/bin/javac javac /opt/$java_dir/bin/javac 100  
-yes 3 | update-alternatives --config javac
+yes 1 | update-alternatives --config javac
 sleep 2
 echo ""
 echo ""
 
-print_colour "green""**************************************************************************"
+print_colour "green" "**************************************************************************"
 
 print_colour "green" "Updating Jar"
 
-print_colour "green""**************************************************************************"
+print_colour "green" "**************************************************************************"
 sleep 3
 update-alternatives --install /usr/bin/jar jar /opt/$java_dir/bin/jar 100  
 sleep 1
-yes 3 | update-alternatives --config jar
+yes 1 | update-alternatives --config jar
 sleep 1
+echo ""
 echo ""
 print_colour "green" "**************************************************************************"
 
@@ -162,15 +168,17 @@ export JRE_HOME=/opt/$java_dir
 sleep 2
 export PATH=$PATH:/opt/$java_dir/bin:/opt/$java_dir/jre/bin
 sleep 2
-
+echo ""
 print_colour "green" "==========================================================================="
 print_colour "green" "Verifying Java Installation....."
 print_colour "green" "============================================================================"
 sleep 2
-
+echo ""
 if java -version 2>&1 >/dev/null | grep "java "; then
     print_colour "green" "Java installed."
+	echo ""
     print_colour "green" "Dear $USER, Java has now been Installed and configured on this machine!"
+	echo ""
 else
     print_colour "red" "Java NOT installed!"
 
