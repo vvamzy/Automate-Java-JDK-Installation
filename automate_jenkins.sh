@@ -37,9 +37,9 @@ sleep 4
 echo ""
 yum upgrade
 sleep 3
-Uncomment this if you are Installing on Amazon Linux
+# Uncomment this if you are Installing on Amazon Linux
 # amazon-linux-extras install epel -y
-Uncomment this if you are installing on RHEL 
+# Uncomment this if you are installing on RHEL 
 yum install epel-release -y
 echo ""
 
